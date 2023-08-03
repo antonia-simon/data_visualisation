@@ -23,7 +23,9 @@ st.multiselect('select location', file_name_list, file_name_list[0])     # to se
 
 p = figure(x_axis_label='x', y_axis_label='y')
 
-p.circle(file_name_list['Mg']/10000, file_name_list['Si']/10000)
+for i in file_name_list:
+  df2 = pd.read_csv(i)
+  p.circle(df2['Mg']/10000, df2['Si']/10000)
 show(p)
 
 
