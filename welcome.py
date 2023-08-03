@@ -21,8 +21,7 @@ select_data = st.multiselect('select location', file_name_list)                 
                                                                                          # reboot app under manage app
 colorlist = ['red', 'green', 'yellow', 'blue']
 labellist = select_data
-p.xgrid.visible = False
-p.ygrid.visible = False
+
   
 p = figure(x_axis_label=x_axis + ' [wt.%]', y_axis_label=y_axis + ' [wt.%]')
 
@@ -30,6 +29,8 @@ for i in range(len(select_data)):
   df2 = pd.read_csv(select_data[i])
   p.circle(df2[x_axis]/10000, df2[y_axis]/10000, color = colorlist[i], legend_label = labellist[i])
 
+p.xgrid.visible = False
+p.ygrid.visible = False
 
 #show(p)
 
