@@ -17,17 +17,14 @@ el_list = df.columns.tolist()[27:80]
 x_axis = st.selectbox('select x element', el_list)
 y_axis = st.selectbox('select y element', el_list)
 
-st.multiselect('select location', file_name_list, file_name_list[0])    # to select more than one element
+st.multiselect('select location', file_name_list, file_name_list[0])     # to select more than one element
+                                                                         # reboot app under manage app
 
 
-x = [1, 2, 3, 4, 5]            # reboot app under manage app
-y = [6, 7, 2, 4, 5]
+p = figure(x_axis_label='x', y_axis_label='y')
 
-p = figure(
-    title='simple line example',
-    x_axis_label='x',
-    y_axis_label='y')
+p.circle(file_name_list['Mg']/10000, file_name_list['Si']/10000)
+show(p)
 
-p.circle(x, y, legend_label='Trend', line_width=2)
 
 st.bokeh_chart(p, use_container_width=True)
