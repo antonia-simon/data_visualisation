@@ -20,12 +20,13 @@ y_axis = st.selectbox('select y element', el_list)
 select_data = st.multiselect('select location', file_name_list)                         # to select more than one element
                                                                                          # reboot app under manage app
 colorlist = ['red', 'green', 'yellow', 'blue']
+markerlist = [
 
-p = figure(x_axis_label=x_axis + ' [wt.%]', y_axis_label=y_axis + ' [wt.%]')
+p = figure(x_axis_label=x_axis + ' [wt.%]', y_axis_label=y_axis + ' [wt.%]', legend=select_data)
 
 for i in range(len(select_data)):
   df2 = pd.read_csv(select_data[i])
-  p.circle(df2[x_axis]/10000, df2[y_axis]/10000, color = colorlist[i])
+  p.circle(df2[x_axis]/10000, df2[y_axis]/10000, color = colorlist[i], marker = markerlist[i])
 
 
 #show(p)
