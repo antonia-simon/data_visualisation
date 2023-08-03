@@ -21,8 +21,8 @@ select_data = st.multiselect('select location', file_name_list)                 
                                                                                          # reboot app under manage app
 colorlist = ['red', 'green', 'yellow', 'blue']
 labellist = select_data
-fig.xgrid.grid_line_color = None
-fig.ygrid.grid_line_color = None
+figure.xgrid.grid_line_color = None
+figure.ygrid.grid_line_color = None
   
 p = figure(x_axis_label=x_axis + ' [wt.%]', y_axis_label=y_axis + ' [wt.%]')
 
