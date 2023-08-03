@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
 
 file_name_list = []                   # initialisation: give a value to variable
-for i in os.listdir():      # select each i in the directory (each .csv file)
+for i in os.listdir():                # select each i in the directory (each .csv file)
   if i.endswith('csv'):
     file_name_list.append(i)
 
