@@ -21,7 +21,7 @@ st.multiselect('select location', file_name_list, file_name_list[0])     # to se
                                                                          # reboot app under manage app
 colorlist = ['red', 'green', 'yellow', 'blue']
 
-p = figure(x_axis_label='x', y_axis_label='y')
+p = figure(x_axis_label=x_axis, y_axis_label=y_axis)
 
 for i in range(len(file_name_list)):
   df2 = pd.read_csv(file_name_list[i])
