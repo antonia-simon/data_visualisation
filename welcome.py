@@ -19,13 +19,15 @@ y_axis = st.selectbox('select y element', el_list)
 
 st.multiselect('select location', file_name_list, file_name_list[0])     # to select more than one element
                                                                          # reboot app under manage app
-
+colorlist = ['red', 'green', 'yellow', 'blue']
 
 p = figure(x_axis_label='x', y_axis_label='y')
 
-for i in file_name_list:
-  df2 = pd.read_csv(i)
-  p.circle(df2['Mg']/10000, df2['Si']/10000)
+for i in range(len(file_name_list)):
+  df2 = pd.read_csv(file_name_list[i])
+  p.circle(df2[x_axis]/10000, df2[y_axis]/10000, color = colorlist[i])
+
+
 #show(p)
 
 
