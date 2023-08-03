@@ -26,7 +26,7 @@ p = figure(x_axis_label=x_axis + ' [wt.%]', y_axis_label=y_axis + ' [wt.%]')
 
 for i in range(len(select_data)):
   df2 = pd.read_csv(select_data[i])
-  p.circle(df2[x_axis]/10000, df2[y_axis]/10000, color = colorlist[i], marker = markerlist[i], legend_label=select_data)
+  p.circle(df2[x_axis]/10000, df2[y_axis]/10000, color = colorlist[i], marker = markerlist[i], legend_label=str(select_data[i]))
 
 
 #show(p)
