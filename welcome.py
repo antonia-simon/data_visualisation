@@ -26,7 +26,7 @@ p = figure(x_axis_label='x', y_axis_label='y')
 for i in file_name_list:
   df2 = pd.read_csv(i)
   p.circle(df2['Mg']/10000, df2['Si']/10000)
-show(p)
+#show(p)
 
 
 st.bokeh_chart(p, use_container_width=True)
