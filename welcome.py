@@ -7,7 +7,7 @@ for i in os.listdir():      # select each i in the directory (each .csv file)
   if i.endswith('csv'):
     file_name_list.append(i)
 
-st.write('file_name_list')
+st.write(file_name_list)
 
 df = pd.read_csv('Bastar Craton.csv')
 st.dataframe(df)
